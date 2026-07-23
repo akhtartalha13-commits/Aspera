@@ -19,16 +19,15 @@ export function Footer() {
           <ul className={styles.linkList}>
             {primaryNav.map((link) => (
               <li key={link.to}>
-                <Link to={link.to} className={styles.link}>
+                <Link
+                  to={link.to}
+                  className={styles.link}
+                  lang={link.to === '/zh' ? 'zh' : undefined}
+                >
                   {link.label}
                 </Link>
               </li>
             ))}
-            <li>
-              <Link to="/zh" className={styles.link} lang="zh">
-                中文 (Chinese)
-              </Link>
-            </li>
           </ul>
         </nav>
 

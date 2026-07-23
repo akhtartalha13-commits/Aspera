@@ -10,6 +10,7 @@ export const primaryNav: NavLink[] = [
   { label: 'About Us', to: '/about' },
   { label: 'Services', to: '/services' },
   { label: 'Contact', to: '/contact' },
+  { label: '中文', to: '/zh' },
 ]
 
 export const brand = {

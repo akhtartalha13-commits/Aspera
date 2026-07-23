@@ -41,7 +41,13 @@ export function Header() {
 
         <nav className={styles.desktopNav} aria-label="Primary">
           {primaryNav.map((link) => (
-            <NavLink key={link.to} to={link.to} className={navClass} end={link.to === '/'}>
+            <NavLink
+              key={link.to}
+              to={link.to}
+              className={navClass}
+              end={link.to === '/'}
+              lang={link.to === '/zh' ? 'zh' : undefined}
+            >
               {link.label}
             </NavLink>
           ))}
@@ -75,7 +81,13 @@ export function Header() {
       >
         <nav className={styles.mobileNav} aria-label="Mobile">
           {primaryNav.map((link) => (
-            <NavLink key={link.to} to={link.to} className={navClass} end={link.to === '/'}>
+            <NavLink
+              key={link.to}
+              to={link.to}
+              className={navClass}
+              end={link.to === '/'}
+              lang={link.to === '/zh' ? 'zh' : undefined}
+            >
               {link.label}
             </NavLink>
           ))}
