@@ -12,9 +12,14 @@ interface LogoProps {
 export function Logo({ light = false, to = '/' }: LogoProps) {
   const content = (
     <span className={`${styles.logo} ${light ? styles.light : ''}`}>
-      <span className={styles.mark} aria-hidden="true">
-        <span className={styles.diamond} />
-      </span>
+      <img
+        className={styles.mark}
+        src="/logo-mark.png"
+        alt=""
+        aria-hidden="true"
+        width={763}
+        height={451}
+      />
       <span className={styles.word}>
         {brand.name} <span className={styles.suffix}>{brand.suffix}</span>
       </span>

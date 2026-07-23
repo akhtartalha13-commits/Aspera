@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { brand, contact, copyright, primaryNav, socials } from '@/data/site'
+import { Logo } from '@/components/ui/Logo'
 import styles from './Footer.module.css'
 
 export function Footer() {
@@ -8,7 +9,7 @@ export function Footer() {
       <div className={styles.top}>
         <div className={styles.brandCol}>
           <div className={styles.brand}>
-            {brand.name} <span className={styles.suffix}>{brand.suffix}</span>
+            <Logo light />
           </div>
           <p className={styles.tagline}>{brand.tagline}</p>
         </div>
