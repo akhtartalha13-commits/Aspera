@@ -1,0 +1,150 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 56px;
+  align-items: start;
+}
+
+/* ---- Contact card --------------------------------------------------- */
+.contactCard {
+  background: var(--surface-cream);
+  border-radius: var(--r-2xl);
+  padding: 48px 44px;
+}
+
+.person {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 32px;
+}
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--navy-800);
+  color: var(--brass-300);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+.name {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 19px;
+  color: var(--navy-800);
+}
+.role {
+  font-size: 14px;
+  color: var(--ink-soft);
+}
+
+.rows {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: inherit;
+}
+.rowIcon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--r-md);
+  background: var(--surface);
+  flex-shrink: 0;
+  transition: transform var(--t-base);
+}
+.row:hover .rowIcon {
+  transform: translateY(-2px);
+}
+.rowLabel {
+  display: block;
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+.rowValue {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15.5px;
+  color: var(--navy-800);
+}
+
+.socials {
+  display: flex;
+  gap: 14px;
+  margin-top: 36px;
+  flex-wrap: wrap;
+}
+.socialPill {
+  display: inline-block;
+  background: var(--surface);
+  border-radius: var(--r-md);
+  padding: 12px 20px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--navy-800);
+  transition: transform var(--t-base), color var(--t-base);
+}
+.socialPill:hover {
+  transform: translateY(-2px);
+  color: var(--brass-700);
+}
+
+/* ---- Aside ---------------------------------------------------------- */
+.aside {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.wechatCard {
+  background: var(--navy-800);
+  border-radius: var(--r-2xl);
+  padding: 36px 32px;
+  text-align: center;
+}
+.wechatTitle {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--brass-300);
+  margin-bottom: 18px;
+}
+.emailCard {
+  background: var(--surface-cream);
+  border-radius: var(--r-2xl);
+  padding: 32px;
+}
+.emailTitle {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--navy-800);
+  margin-bottom: 10px;
+}
+.emailText {
+  font-size: 14.5px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  margin: 0 0 18px;
+}
+
+@media (max-width: 860px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .contactCard {
+    padding: 36px 28px;
+  }
+}

@@ -1,0 +1,51 @@
+.link {
+  display: inline-flex;
+  text-decoration: none;
+  border-radius: var(--r-sm);
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mark {
+  width: 34px;
+  height: 34px;
+  background: linear-gradient(135deg, var(--navy-800), var(--navy-700));
+  border-radius: var(--r-sm);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  transition: transform var(--t-base);
+}
+
+.link:hover .mark {
+  transform: rotate(6deg);
+}
+
+.diamond {
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--brass-500);
+  border-radius: 3px;
+  transform: rotate(45deg);
+}
+
+.word {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+  color: var(--navy-800);
+  white-space: nowrap;
+}
+
+.suffix {
+  color: var(--brass-500);
+}
+
+.light .word {
+  color: #fff;
+}

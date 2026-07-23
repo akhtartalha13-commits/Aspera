@@ -1,0 +1,74 @@
+.btn {
+  --btn-bg: var(--brass-500);
+  --btn-fg: var(--navy-800);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1;
+  border: 1.5px solid transparent;
+  border-radius: var(--r-pill);
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background var(--t-base), color var(--t-base), transform var(--t-base),
+    box-shadow var(--t-base), border-color var(--t-base);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+.btn:active {
+  transform: translateY(0);
+}
+
+/* ---- Sizes ---------------------------------------------------------- */
+.md {
+  font-size: 14px;
+  padding: 12px 26px;
+}
+.lg {
+  font-size: 15px;
+  padding: 16px 32px;
+}
+
+/* ---- Variants ------------------------------------------------------- */
+.primary {
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+  box-shadow: 0 6px 18px rgba(200, 155, 74, 0.28);
+}
+.primary:hover {
+  background: var(--brass-600);
+  color: var(--navy-800);
+  box-shadow: 0 12px 26px rgba(200, 155, 74, 0.36);
+}
+
+.outline {
+  background: transparent;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+.outline:hover {
+  color: #fff;
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.link {
+  background: transparent;
+  color: var(--navy-800);
+  padding: 4px 0;
+  border-radius: 0;
+  border-bottom: 2px solid var(--brass-500);
+}
+.link:hover {
+  color: var(--brass-700);
+  transform: none;
+}
+.link.lg,
+.link.md {
+  padding: 4px 0;
+}

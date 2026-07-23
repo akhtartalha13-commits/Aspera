@@ -1,0 +1,44 @@
+.strip {
+  background: var(--navy-800);
+  padding: 40px var(--gutter);
+}
+
+.grid {
+  max-width: var(--maxw);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 32px;
+}
+
+.item {
+  text-align: center;
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0 16px;
+}
+
+.value {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 34px;
+  color: var(--brass-300);
+}
+
+.label {
+  font-size: 14px;
+  color: var(--on-dark-soft);
+  margin-top: 6px;
+  letter-spacing: 0.3px;
+}
+
+@media (max-width: 560px) {
+  .item {
+    border-left: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    padding-top: 20px;
+  }
+  .item:first-child {
+    border-top: none;
+    padding-top: 0;
+  }
+}

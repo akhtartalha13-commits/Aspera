@@ -1,0 +1,37 @@
+.card {
+  background: var(--surface);
+  border-radius: var(--r-xl);
+  padding: 34px 30px;
+  height: 100%;
+  border: 1px solid transparent;
+  transition: transform var(--t-base), box-shadow var(--t-base), border-color var(--t-base);
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--border);
+}
+
+.iconWrap {
+  display: inline-grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border-radius: var(--r-md);
+  background: rgba(200, 155, 74, 0.1);
+  margin-bottom: 18px;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--navy-800);
+  margin: 0 0 10px;
+}
+
+.desc {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  margin: 0;
+}

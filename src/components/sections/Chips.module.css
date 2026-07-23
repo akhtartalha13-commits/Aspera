@@ -1,0 +1,42 @@
+/* Solid variant — navy category cards laid out in a responsive grid. */
+.solid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+.solid .chip {
+  background: var(--navy-800);
+  color: #fff;
+  border-radius: var(--r-lg);
+  padding: 20px 22px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 15px;
+  transition: transform var(--t-base), background var(--t-base);
+}
+.solid .chip:hover {
+  transform: translateY(-3px);
+  background: var(--navy-700);
+}
+
+/* Outline variant — centered white pills. */
+.outline {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+}
+.outline .chip {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-pill);
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--navy-800);
+  transition: border-color var(--t-base), color var(--t-base);
+}
+.outline .chip:hover {
+  border-color: var(--brass-500);
+  color: var(--brass-700);
+}

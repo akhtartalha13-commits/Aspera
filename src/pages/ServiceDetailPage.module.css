@@ -1,0 +1,27 @@
+.intro {
+  max-width: var(--maxw-prose);
+}
+
+.introHeading {
+  font-weight: 800;
+  font-size: clamp(24px, 2.8vw, 32px);
+  color: var(--navy-800);
+  margin: 0 0 20px;
+  line-height: 1.2;
+}
+
+.introPara {
+  font-size: 16.5px;
+  line-height: 1.75;
+  color: var(--ink-muted);
+  margin: 0 0 18px;
+}
+.introPara:last-child {
+  margin-bottom: 0;
+}
+
+.offerGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+}

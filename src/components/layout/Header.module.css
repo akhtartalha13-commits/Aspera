@@ -1,0 +1,167 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-header);
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  transition: box-shadow var(--t-base), background var(--t-base);
+}
+
+.scrolled {
+  box-shadow: 0 6px 24px rgba(18, 33, 61, 0.07);
+}
+
+.bar {
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding: 16px var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* ---- Desktop nav ---------------------------------------------------- */
+.desktopNav {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 3vw, 36px);
+  margin-left: auto;
+}
+
+.navLink {
+  position: relative;
+  font-family: var(--font-body);
+  color: var(--ink-body);
+  font-weight: 600;
+  font-size: 15px;
+  padding-bottom: 4px;
+  transition: color var(--t-fast);
+}
+.navLink::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: var(--brass-500);
+  transition: width var(--t-base);
+}
+.navLink:hover {
+  color: var(--navy-800);
+}
+.navLink:hover::after,
+.active::after {
+  width: 100%;
+}
+.active {
+  color: var(--navy-800);
+}
+
+.desktopCta {
+  margin-left: 8px;
+}
+
+/* ---- Burger --------------------------------------------------------- */
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+}
+.burgerLine {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: var(--navy-800);
+  border-radius: 2px;
+  transition: transform var(--t-base), opacity var(--t-fast);
+}
+.line1 {
+  transform: translateY(7px) rotate(45deg);
+}
+.line2 {
+  opacity: 0;
+}
+.line3 {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ---- Mobile drawer -------------------------------------------------- */
+.drawer {
+  display: none;
+}
+.scrim {
+  display: none;
+}
+
+.mobileCta {
+  margin-top: 8px;
+  width: 100%;
+}
+
+/* ---- Responsive switch ---------------------------------------------- */
+@media (max-width: 860px) {
+  .desktopNav,
+  .desktopCta {
+    display: none;
+  }
+  .burger {
+    display: flex;
+  }
+
+  .drawer {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 20px 40px rgba(18, 33, 61, 0.12);
+    max-height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    transition: max-height var(--t-base), visibility 0s linear var(--t-base-dur, 0.25s);
+  }
+  .drawerOpen {
+    max-height: 80vh;
+    visibility: visible;
+    transition: max-height var(--t-base), visibility 0s;
+  }
+
+  .mobileNav {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 16px var(--gutter) 28px;
+  }
+  .mobileNav .navLink {
+    font-size: 17px;
+    padding: 14px 4px;
+    border-bottom: 1px solid var(--border);
+  }
+  .mobileNav .navLink::after {
+    display: none;
+  }
+
+  .scrim {
+    display: block;
+    position: fixed;
+    inset: 0;
+    top: 73px;
+    z-index: -1;
+    background: rgba(11, 21, 38, 0.35);
+  }
+}

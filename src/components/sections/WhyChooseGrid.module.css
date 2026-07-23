@@ -1,0 +1,33 @@
+.grid {
+  display: grid;
+  gap: 1px;
+  background: var(--cream-200);
+  border-radius: var(--r-xl);
+  overflow: hidden;
+}
+
+.cell {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: var(--surface);
+  padding: 34px 30px;
+  transition: background var(--t-base);
+}
+.cell:hover {
+  background: #fcfaf5;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--navy-800);
+  line-height: 1.35;
+}
+
+.desc {
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}

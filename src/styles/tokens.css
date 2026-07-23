@@ -1,0 +1,109 @@
+/* =========================================================================
+   Aspera USA — Design Tokens
+   Single source of truth for color, type, spacing, radius, shadow, motion.
+   Preserves the original brand (navy / brass / cream) with a 2026 refresh.
+   ========================================================================= */
+
+:root {
+  /* ---- Brand color scale -------------------------------------------- */
+  --navy-900: #0b1526; /* deepest — hero / footer backgrounds */
+  --navy-800: #12213d; /* primary brand navy */
+  --navy-700: #1e3a6b; /* gradient partner */
+  --navy-600: #2c3140; /* body ink */
+
+  --brass-500: #c89b4a; /* primary accent (gold) */
+  --brass-600: #b98b38; /* accent hover */
+  --brass-700: #a97f38; /* link hover */
+  --brass-300: #e0bc7a; /* light gold on dark */
+
+  --cream-100: #f7f4ee; /* warm section background */
+  --cream-200: #ece8e0; /* hairline / border */
+
+  /* ---- Semantic text colors ----------------------------------------- */
+  --ink: #12213d;
+  --ink-body: #2c3140;
+  --ink-muted: #565d70;
+  --ink-soft: #6a7188;
+  --ink-faint: #8891a5;
+
+  --on-dark: #ffffff;
+  --on-dark-muted: #c7cdda;
+  --on-dark-soft: #aeb6c8;
+  --on-dark-faint: #8891a5;
+
+  /* ---- Surfaces ----------------------------------------------------- */
+  --surface: #ffffff;
+  --surface-cream: var(--cream-100);
+  --surface-dark: var(--navy-800);
+  --surface-darkest: var(--navy-900);
+  --border: var(--cream-200);
+  --border-dark: rgba(255, 255, 255, 0.1);
+
+  /* ---- Typography --------------------------------------------------- */
+  --font-display: 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-body: 'Source Sans 3', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-sc: 'Noto Sans SC', 'Source Sans 3', system-ui, sans-serif;
+
+  /* Fluid type scale (clamp: min, preferred, max) */
+  --fs-eyebrow: 13px;
+  --fs-sm: 14px;
+  --fs-base: clamp(15px, 1vw + 0.6rem, 17px);
+  --fs-lead: clamp(16px, 1.7vw, 19px);
+  --fs-h3: clamp(18px, 1.4vw + 0.6rem, 20px);
+  --fs-h2: clamp(28px, 3.4vw, 40px);
+  --fs-h1: clamp(32px, 5.2vw, 60px);
+  --fs-h1-inner: clamp(30px, 4.6vw, 52px);
+
+  --lh-tight: 1.12;
+  --lh-snug: 1.25;
+  --lh-body: 1.7;
+
+  /* ---- Spacing scale (8pt-ish) -------------------------------------- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  /* Fluid vertical section rhythm */
+  --section-y: clamp(72px, 9vw, 120px);
+  --section-y-sm: clamp(56px, 7vw, 90px);
+  --gutter: clamp(20px, 5vw, 64px);
+
+  /* ---- Layout ------------------------------------------------------- */
+  --maxw: 1280px;
+  --maxw-narrow: 1120px;
+  --maxw-prose: 800px;
+
+  /* ---- Radius ------------------------------------------------------- */
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 14px;
+  --r-xl: 20px;
+  --r-2xl: 24px;
+  --r-pill: 999px;
+
+  /* ---- Shadow / elevation ------------------------------------------- */
+  --shadow-sm: 0 2px 16px rgba(18, 33, 61, 0.06);
+  --shadow-md: 0 10px 28px rgba(18, 33, 61, 0.1);
+  --shadow-lg: 0 16px 36px rgba(18, 33, 61, 0.12);
+  --shadow-ring: 0 0 0 1px var(--border);
+
+  /* ---- Motion ------------------------------------------------------- */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --t-fast: 0.18s var(--ease);
+  --t-base: 0.25s var(--ease);
+  --t-slow: 0.5s var(--ease);
+
+  /* ---- Z-index scale ------------------------------------------------ */
+  --z-header: 100;
+  --z-menu: 200;
+  --z-skip: 300;
+}

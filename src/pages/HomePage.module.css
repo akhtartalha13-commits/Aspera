@@ -1,0 +1,53 @@
+.story {
+  padding-block: var(--section-y);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.storyTitle {
+  font-weight: 800;
+  font-size: var(--fs-h2);
+  line-height: 1.15;
+  color: var(--navy-800);
+  margin: 0 0 22px;
+}
+
+.storyPara {
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--ink-muted);
+  margin: 0 0 20px;
+}
+
+.storyLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--navy-800);
+  border-bottom: 2px solid var(--brass-500);
+  padding-bottom: 4px;
+  margin-top: 8px;
+  transition: gap var(--t-base);
+}
+.storyLink:hover {
+  color: var(--brass-700);
+  gap: 14px;
+}
+
+.serviceGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+}
+
+@media (max-width: 860px) {
+  .story {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}

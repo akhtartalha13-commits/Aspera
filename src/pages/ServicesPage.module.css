@@ -1,0 +1,55 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 28px;
+}
+
+/* OEM highlight (navy) card */
+.oemCard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100%;
+  background: var(--navy-800);
+  border-radius: var(--r-xl);
+  padding: 40px 34px;
+}
+
+.oemIcon {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: var(--r-md);
+  background: rgba(224, 188, 122, 0.14);
+  margin-bottom: 20px;
+}
+
+.oemTitle {
+  font-weight: 700;
+  font-size: 20px;
+  color: #fff;
+  margin: 0 0 12px;
+}
+
+.oemDesc {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--on-dark-soft);
+  margin: 0 0 18px;
+}
+
+.oemLink {
+  margin-top: auto;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--brass-300);
+  display: inline-flex;
+  gap: 6px;
+  transition: gap var(--t-base);
+}
+.oemLink:hover {
+  color: var(--brass-300);
+  gap: 12px;
+}
