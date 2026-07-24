@@ -1,18 +1,49 @@
+import { useEffect, useState } from 'react'
 import { Button } from '@/components/ui/Button'
-import { ImageSlot } from '@/components/ui/ImageSlot'
 import { brand } from '@/data/site'
 import styles from './Hero.module.css'
 
+/** Background slides for the hero. Order matches the supplied artwork. */
+const slides = [
+  '/hero/hero-1.jpg',
+  '/hero/hero-2.jpg',
+  '/hero/hero-3.jpg',
+  '/hero/hero-4.jpg',
+]
+
+/** How long each slide stays before cross-fading to the next. */
+const SLIDE_MS = 1500
+
 /** Home page hero — full-bleed dark section with headline + dual CTAs. */
 export function Hero() {
+  const [index, setIndex] = useState(0)
+
+  useEffect(() => {
+    // Honour reduced-motion preferences: hold on the first slide instead of cycling.
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)')
+    if (reduce.matches) return
+
+    const id = window.setInterval(
+      () => setIndex((i) => (i + 1) % slides.length),
+      SLIDE_MS,
+    )
+    return () => window.clearInterval(id)
+  }, [])
+
   return (
     <section className={styles.hero}>
       <div className={styles.bg}>
-        <ImageSlot
-          fill
-          label="Drop hero image — skyline or factory floor"
-          radius={0}
-        />
+        <div className={styles.slides} aria-hidden="true">
+          {slides.map((src, i) => (
+            <img
+              key={src}
+              src={src}
+              alt=""
+              className={`${styles.slide} ${i === index ? styles.slideActive : ''}`}
+              decoding="async"
+            />
+          ))}
+        </div>
         <div className={styles.overlay} />
         <div className={styles.glow} aria-hidden="true" />
       </div>
