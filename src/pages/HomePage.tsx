@@ -39,7 +39,13 @@ export default function HomePage() {
           </Link>
         </Reveal>
         <Reveal delay={120}>
-          <ImageSlot label="Drop a factory / craftsmanship photo" height={420} radius={24} />
+          <ImageSlot
+            label="Drop a factory / craftsmanship photo"
+            src="/heritage.jpg"
+            alt="Aspera USA manufacturing — facility, precision components, machining, and warehousing"
+            height={420}
+            radius={24}
+          />
         </Reveal>
       </Container>
 

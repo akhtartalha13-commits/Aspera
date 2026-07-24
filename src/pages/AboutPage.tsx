@@ -23,7 +23,13 @@ export default function AboutPage() {
       {/* Story */}
       <Container narrow as="section" className={styles.story}>
         <Reveal>
-          <ImageSlot label="Drop a family / factory heritage photo" height={460} radius={24} />
+          <ImageSlot
+            label="Drop a family / factory heritage photo"
+            src="/heritage.jpg"
+            alt="Aspera USA manufacturing — facility, precision components, machining, and warehousing"
+            height={460}
+            radius={24}
+          />
         </Reveal>
         <Reveal delay={100}>
           <p className="eyebrow">Our Story</p>
