@@ -69,7 +69,13 @@ export default function ChinesePage() {
           </ul>
         </Reveal>
         <Reveal delay={100}>
-          <ImageSlot label="放置纽约与工厂结合的图片" height={420} radius={24} />
+          <ImageSlot
+            label="放置纽约与工厂结合的图片"
+            src="/heritage.jpg"
+            alt="Aspera USA 制造实力 — 厂区、精密零部件、数控加工与仓储物流"
+            height={420}
+            radius={24}
+          />
         </Reveal>
       </section>
 
