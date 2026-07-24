@@ -98,6 +98,8 @@ export default function ContactPage() {
                 <div className={styles.wechatTitle}>Scan to Connect on WeChat</div>
                 <ImageSlot
                   label="Drop WeChat QR code"
+                  src="/wechat-qr.png"
+                  alt={`WeChat QR code for ${contact.person} — scan to add on WeChat`}
                   height={220}
                   maxWidth={220}
                   radius={16}

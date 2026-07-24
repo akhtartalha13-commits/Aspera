@@ -162,7 +162,14 @@ export default function ChinesePage() {
           </div>
           <div className={styles.qrCard}>
             <div className={styles.qrTitle}>扫码添加微信</div>
-            <ImageSlot label="放置微信二维码" height={220} maxWidth={220} radius={16} />
+            <ImageSlot
+              label="放置微信二维码"
+              src="/wechat-qr.png"
+              alt="微信二维码 — 扫码添加我们"
+              height={220}
+              maxWidth={220}
+              radius={16}
+            />
           </div>
         </div>
       </section>
