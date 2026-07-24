@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { usePageMeta } from '@/hooks/usePageMeta'
 import { Logo } from '@/components/ui/Logo'
 import { Icon } from '@/components/ui/Icon'
+import { HeroSlideshow } from '@/components/ui/HeroSlideshow'
 import { ImageSlot } from '@/components/ui/ImageSlot'
 import { Reveal } from '@/components/ui/Reveal'
 import { contact } from '@/data/site'
@@ -27,7 +28,7 @@ export default function ChinesePage() {
       {/* Hero */}
       <section className={styles.hero}>
         <div className={styles.heroBg}>
-          <ImageSlot fill label="放置纽约与工厂结合的大图" radius={0} />
+          <HeroSlideshow />
           <div className={styles.heroOverlay} />
         </div>
         <div className={styles.heroInner}>
