@@ -7,7 +7,9 @@ interface PageHeroProps {
   title: ReactNode
   subtitle?: ReactNode
   align?: 'center' | 'left'
-  /** When provided, renders a background image slot behind the copy. */
+  /** When provided, renders a real background photo behind the copy. */
+  image?: string
+  /** Fallback placeholder slot, used when no `image` is supplied. */
   imageLabel?: string
 }
 
@@ -20,9 +22,10 @@ export function PageHero({
   title,
   subtitle,
   align = 'center',
+  image,
   imageLabel,
 }: PageHeroProps) {
-  const hasImage = Boolean(imageLabel)
+  const hasImage = Boolean(image || imageLabel)
   const cls = [
     styles.hero,
     align === 'center' ? styles.center : styles.left,
@@ -35,7 +38,11 @@ export function PageHero({
     <section className={cls}>
       {hasImage && (
         <div className={styles.bg}>
-          <ImageSlot fill label={imageLabel!} radius={0} />
+          {image ? (
+            <img className={styles.bgImage} src={image} alt="" aria-hidden="true" decoding="async" />
+          ) : (
+            <ImageSlot fill label={imageLabel!} radius={0} />
+          )}
           <div className={styles.overlay} />
         </div>
       )}

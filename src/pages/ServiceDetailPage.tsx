@@ -51,7 +51,7 @@ export default function ServiceDetailPage() {
         eyebrow={service.title}
         title={service.heroTitle}
         align="left"
-        imageLabel={service.heroPlaceholder}
+        image={`/services/${service.slug}.jpg`}
       />
 
       {/* Intro */}
