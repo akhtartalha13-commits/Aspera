@@ -24,31 +24,6 @@ export default function HomePage() {
       <Hero />
       <StatsStrip items={homeStats} />
 
-      {/* Story intro */}
-      <Container narrow as="section" className={styles.story}>
-        <Reveal>
-          <p className="eyebrow">Our Story</p>
-          <h2 className={styles.storyTitle}>Three Generations. One Promise.</h2>
-          {homeStory.paragraphs.map((p) => (
-            <p key={p} className={styles.storyPara}>
-              {p}
-            </p>
-          ))}
-          <Link to="/about" className={styles.storyLink}>
-            Read Our Full Story →
-          </Link>
-        </Reveal>
-        <Reveal delay={120}>
-          <ImageSlot
-            label="Drop a factory / craftsmanship photo"
-            src="/heritage.jpg"
-            alt="Aspera USA manufacturing — facility, precision components, machining, and warehousing"
-            height={420}
-            radius={24}
-          />
-        </Reveal>
-      </Container>
-
       {/* Services */}
       <section className="section section--cream">
         <Container>
@@ -74,6 +49,31 @@ export default function HomePage() {
           </div>
         </Container>
       </section>
+
+      {/* Story intro */}
+      <Container narrow as="section" className={styles.story}>
+        <Reveal>
+          <p className="eyebrow">Our Story</p>
+          <h2 className={styles.storyTitle}>Three Generations. One Promise.</h2>
+          {homeStory.paragraphs.map((p) => (
+            <p key={p} className={styles.storyPara}>
+              {p}
+            </p>
+          ))}
+          <Link to="/about" className={styles.storyLink}>
+            Read Our Full Story →
+          </Link>
+        </Reveal>
+        <Reveal delay={120}>
+          <ImageSlot
+            label="Drop a factory / craftsmanship photo"
+            src="/heritage.jpg"
+            alt="Aspera USA manufacturing — facility, precision components, machining, and warehousing"
+            height={420}
+            radius={24}
+          />
+        </Reveal>
+      </Container>
 
       {/* Why choose */}
       <section className="section">
