@@ -5,40 +5,17 @@
 }
 
 .logo {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.mark {
-  height: 40px;
+  display: block;
+  height: 46px;
   width: auto;
-  flex-shrink: 0;
   transition: transform var(--t-base);
 }
 
-.link:hover .mark {
-  transform: scale(1.04);
+.link:hover .logo {
+  transform: scale(1.03);
 }
 
-/* On dark backgrounds the brown line-art needs lightening to stay visible. */
-.light .mark {
-  filter: brightness(0) invert(1) opacity(0.92);
-}
-
-.word {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 20px;
-  letter-spacing: 0.5px;
-  color: var(--navy-800);
-  white-space: nowrap;
-}
-
-.suffix {
-  color: var(--brass-500);
-}
-
-.light .word {
-  color: #fff;
+/* On dark backgrounds the navy logo needs to render white to stay visible. */
+.light {
+  filter: brightness(0) invert(1);
 }

@@ -5,9 +5,8 @@ import { ImageSlot } from '@/components/ui/ImageSlot'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { PageHero } from '@/components/sections/PageHero'
 import { InfoCard } from '@/components/sections/InfoCard'
-import { WhyChooseGrid } from '@/components/sections/WhyChooseGrid'
 import { CTABand } from '@/components/sections/CTABand'
-import { aboutStory, aboutValues, aboutWhyChoose } from '@/data/content'
+import { aboutStory, aboutValues } from '@/data/content'
 import styles from './AboutPage.module.css'
 
 export default function AboutPage() {
@@ -55,18 +54,6 @@ export default function AboutPage() {
               </Reveal>
             ))}
           </div>
-        </Container>
-      </section>
-
-      {/* Why choose */}
-      <section className="section">
-        <Container>
-          <Reveal>
-            <SectionHeading title="Why Choose Aspera USA?" />
-          </Reveal>
-          <Reveal>
-            <WhyChooseGrid items={aboutWhyChoose.map((title) => ({ title }))} />
-          </Reveal>
         </Container>
       </section>
 

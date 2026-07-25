@@ -3,7 +3,7 @@ import { brand } from '@/data/site'
 import styles from './Logo.module.css'
 
 interface LogoProps {
-  /** Render the wordmark in light colors (for dark backgrounds). */
+  /** Render the logo in light colors (for dark backgrounds). */
   light?: boolean
   /** Optional link target; when omitted the logo is a plain mark. */
   to?: string
@@ -11,19 +11,13 @@ interface LogoProps {
 
 export function Logo({ light = false, to = '/' }: LogoProps) {
   const content = (
-    <span className={`${styles.logo} ${light ? styles.light : ''}`}>
-      <img
-        className={styles.mark}
-        src="/logo-mark.png"
-        alt=""
-        aria-hidden="true"
-        width={763}
-        height={451}
-      />
-      <span className={styles.word}>
-        {brand.name} <span className={styles.suffix}>{brand.suffix}</span>
-      </span>
-    </span>
+    <img
+      className={`${styles.logo} ${light ? styles.light : ''}`}
+      src="/logo.png"
+      alt={`${brand.name} ${brand.suffix}`}
+      width={496}
+      height={256}
+    />
   )
 
   if (!to) return content

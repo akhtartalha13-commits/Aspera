@@ -7,7 +7,6 @@ import { SectionHeading } from '@/components/ui/SectionHeading'
 import { PageHero } from '@/components/sections/PageHero'
 import { InfoCard } from '@/components/sections/InfoCard'
 import { Chips } from '@/components/sections/Chips'
-import { WhyChooseGrid } from '@/components/sections/WhyChooseGrid'
 import { CTABand } from '@/components/sections/CTABand'
 import { getServiceBySlug } from '@/data/services'
 import styles from './ServiceDetailPage.module.css'
@@ -43,7 +42,6 @@ export default function ServiceDetailPage() {
   const offersCream = true
   const categoriesCream = false
   const industriesCream = true
-  const whyChooseCream = !service.industries // white when Industries block precedes it
 
   return (
     <>
@@ -108,20 +106,6 @@ export default function ServiceDetailPage() {
             </Reveal>
             <Reveal>
               <Chips items={service.industries} variant="outline" />
-            </Reveal>
-          </Container>
-        </section>
-      )}
-
-      {/* Why Choose (optional) */}
-      {service.whyChoose && (
-        <section className={`section ${whyChooseCream ? 'section--cream' : ''}`}>
-          <Container>
-            <Reveal>
-              <SectionHeading title="Why Choose Aspera USA?" />
-            </Reveal>
-            <Reveal>
-              <WhyChooseGrid items={service.whyChoose.map((title) => ({ title }))} minColumn={220} />
             </Reveal>
           </Container>
         </section>

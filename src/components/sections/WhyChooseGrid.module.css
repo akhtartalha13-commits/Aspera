@@ -6,6 +6,25 @@
   overflow: hidden;
 }
 
+/* Single-row variant: all N items on one line on desktop, tighter padding so
+   six cells fit comfortably; steps down to 3 then 2 columns as width shrinks. */
+.singleRow {
+  grid-template-columns: repeat(var(--cols, 6), 1fr);
+}
+.singleRow .cell {
+  padding: 26px 20px;
+}
+@media (max-width: 1024px) {
+  .singleRow {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 560px) {
+  .singleRow {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 .cell {
   display: flex;
   flex-direction: column;

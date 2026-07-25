@@ -3,13 +3,10 @@ import { usePageMeta } from '@/hooks/usePageMeta'
 import { Container } from '@/components/ui/Container'
 import { Reveal } from '@/components/ui/Reveal'
 import { Icon } from '@/components/ui/Icon'
-import { SectionHeading } from '@/components/ui/SectionHeading'
 import { PageHero } from '@/components/sections/PageHero'
 import { ServiceCard } from '@/components/sections/ServiceCard'
-import { WhyChooseGrid } from '@/components/sections/WhyChooseGrid'
 import { CTABand } from '@/components/sections/CTABand'
 import { services } from '@/data/services'
-import { servicesWhyPartner } from '@/data/content'
 import styles from './ServicesPage.module.css'
 
 export default function ServicesPage() {
@@ -58,17 +55,6 @@ export default function ServicesPage() {
               </div>
             </Reveal>
           </div>
-        </Container>
-      </section>
-
-      <section className="section section--cream">
-        <Container>
-          <Reveal>
-            <SectionHeading title="Why Partner With Aspera USA?" />
-          </Reveal>
-          <Reveal>
-            <WhyChooseGrid items={servicesWhyPartner.map((title) => ({ title }))} minColumn={220} />
-          </Reveal>
         </Container>
       </section>
 

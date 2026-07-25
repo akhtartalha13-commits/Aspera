@@ -9,17 +9,26 @@ interface WhyChooseGridProps {
   items: WhyChooseItem[]
   /** Minimum column width; smaller for dense single-line lists. */
   minColumn?: number
+  /**
+   * Force all items onto a single row on desktop (collapsing to fewer
+   * columns on narrower screens). Used for the 6-up home "Why Aspera USA".
+   */
+  singleRow?: boolean
 }
 
 /**
  * Bordered feature grid. Accepts either single-line statements
  * (title only) or title + description pairs (home "Why Aspera USA").
  */
-export function WhyChooseGrid({ items, minColumn = 240 }: WhyChooseGridProps) {
+export function WhyChooseGrid({ items, minColumn = 240, singleRow = false }: WhyChooseGridProps) {
   return (
     <ul
-      className={styles.grid}
-      style={{ gridTemplateColumns: `repeat(auto-fit, minmax(${minColumn}px, 1fr))` }}
+      className={`${styles.grid} ${singleRow ? styles.singleRow : ''}`}
+      style={
+        singleRow
+          ? { ['--cols' as string]: items.length }
+          : { gridTemplateColumns: `repeat(auto-fit, minmax(${minColumn}px, 1fr))` }
+      }
     >
       {items.map((item) => (
         <li key={item.title} className={styles.cell}>
