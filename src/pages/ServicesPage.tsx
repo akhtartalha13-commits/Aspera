@@ -31,6 +31,7 @@ export default function ServicesPage() {
                 <ServiceCard
                   to={`/services/${service.slug}`}
                   icon={service.icon}
+                  image={`/service-icons/${service.slug}.jpg`}
                   title={service.title}
                   desc={service.servicesDesc}
                   variant="cream"

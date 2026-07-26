@@ -46,8 +46,10 @@ export default function ContactPage() {
       <section className="section">
         <Container narrow>
           <div className={styles.grid}>
-            {/* Contact card */}
-            <Reveal className={styles.contactCard}>
+            {/* Left column: contact details + email */}
+            <div className={styles.mainCol}>
+              {/* Contact card */}
+              <Reveal className={styles.contactCard}>
               <div className={styles.person}>
                 <span className={styles.avatar} aria-hidden="true">
                   LZ
@@ -92,9 +94,21 @@ export default function ContactPage() {
                   </li>
                 ))}
               </ul>
-            </Reveal>
+              </Reveal>
 
-            {/* Aside: WeChat + Instagram + email */}
+              <Reveal delay={100} className={styles.emailCard}>
+                <div className={styles.emailTitle}>Prefer email?</div>
+                <p className={styles.emailText}>
+                  Send us your product idea, quantities, and timeline — we'll follow up with next
+                  steps.
+                </p>
+                <Button href={contact.emailHref} size="md">
+                  Email Us →
+                </Button>
+              </Reveal>
+            </div>
+
+            {/* Aside: WeChat + Instagram */}
             <div className={styles.aside}>
               <Reveal className={styles.wechatCard}>
                 <div className={styles.wechatTitle}>Scan to Connect on WeChat</div>
@@ -120,17 +134,6 @@ export default function ContactPage() {
                   maxWidth={220}
                   radius={16}
                 />
-              </Reveal>
-
-              <Reveal delay={100} className={styles.emailCard}>
-                <div className={styles.emailTitle}>Prefer email?</div>
-                <p className={styles.emailText}>
-                  Send us your product idea, quantities, and timeline — we'll follow up with next
-                  steps.
-                </p>
-                <Button href={contact.emailHref} size="md">
-                  Email Us →
-                </Button>
               </Reveal>
             </div>
           </div>

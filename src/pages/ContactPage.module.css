@@ -5,6 +5,13 @@
   align-items: start;
 }
 
+/* Left column: contact card with the "Prefer email" card stacked beneath it. */
+.mainCol {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
 /* ---- Contact card --------------------------------------------------- */
 .contactCard {
   background: var(--surface-cream);
