@@ -8,8 +8,20 @@ import { PageHero } from '@/components/sections/PageHero'
 import { InfoCard } from '@/components/sections/InfoCard'
 import { Chips } from '@/components/sections/Chips'
 import { CTABand } from '@/components/sections/CTABand'
+import { ProductSlideshow } from '@/components/sections/ProductSlideshow'
 import { getServiceBySlug } from '@/data/services'
 import styles from './ServiceDetailPage.module.css'
+
+/** Product photo slideshow shown only on the Industrial Solutions page.
+    Captions are the picture names. */
+const industrialSlides = [
+  { src: '/industrial-slides/synchronous-belt.jpg', name: 'Synchronous Belt' },
+  { src: '/industrial-slides/rubber-synchronous-belt.jpg', name: 'Rubber Synchronous Belt' },
+  { src: '/industrial-slides/pu-synchronous-belt.jpg', name: 'PU Synchronous Belt' },
+  { src: '/industrial-slides/ribbed-belt-series.jpg', name: 'Ribbed Belt Series' },
+  { src: '/industrial-slides/ele-tool-belt-series.jpg', name: 'Ele Tool Belt Series' },
+  { src: '/industrial-slides/synchronous-belt-wheel.jpg', name: 'Synchronous Belt Wheel' },
+]
 
 export default function ServiceDetailPage() {
   const { slug } = useParams()
@@ -93,6 +105,20 @@ export default function ServiceDetailPage() {
           </Reveal>
         </Container>
       </section>
+
+      {/* Product slideshow (Industrial Solutions only) */}
+      {service.slug === 'industrial-solutions' && (
+        <section className="section">
+          <Container>
+            <Reveal>
+              <SectionHeading title="Product Showcase" />
+            </Reveal>
+            <Reveal>
+              <ProductSlideshow slides={industrialSlides} intervalMs={4000} />
+            </Reveal>
+          </Container>
+        </section>
+      )}
 
       {/* Industries We Serve (Industrial only) */}
       {service.industries && (

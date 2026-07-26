@@ -1,0 +1,92 @@
+.slideshow {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+/* Fixed frame so mixed portrait/landscape product shots don't shift layout.
+   contain keeps every image fully visible; the soft bg fills the letterbox. */
+.frame {
+  position: relative;
+  width: 100%;
+  height: clamp(340px, 52vh, 520px);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  transition: opacity 600ms ease-in-out;
+  pointer-events: none;
+}
+
+.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 18px;
+}
+
+/* Name badge over the image, on a scrim so it reads on any product photo. */
+.caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 40px 24px 18px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(16px, 2.4vw, 22px);
+  letter-spacing: 0.3px;
+  color: #fff;
+  background: linear-gradient(to top, rgba(7, 31, 60, 0.82) 0%, rgba(7, 31, 60, 0) 100%);
+  text-align: center;
+}
+
+/* ---- Dots ---------------------------------------------------------- */
+.dots {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1.5px solid var(--navy-700);
+  background: transparent;
+  cursor: pointer;
+  transition: background var(--t-base), transform var(--t-base);
+}
+
+.dot:hover {
+  background: rgba(12, 108, 222, 0.35);
+}
+
+.dotActive {
+  background: var(--navy-700);
+  transform: scale(1.15);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slide {
+    transition: none;
+  }
+}
