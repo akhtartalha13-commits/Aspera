@@ -58,10 +58,7 @@ export default function ServicesPage() {
         </Container>
       </section>
 
-      <CTABand
-        title="Let's Build Your Next Project Together"
-        text="Whether you're launching a new product or expanding your existing line, Aspera USA is ready to support your business with reliable manufacturing solutions."
-      />
+      <CTABand title="Let's Build Your Next Project Together" />
     </>
   )
 }

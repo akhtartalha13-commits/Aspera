@@ -1,8 +1,6 @@
-import { Link } from 'react-router-dom'
 import { usePageMeta } from '@/hooks/usePageMeta'
 import { Container } from '@/components/ui/Container'
 import { Reveal } from '@/components/ui/Reveal'
-import { ImageSlot } from '@/components/ui/ImageSlot'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { Hero } from '@/components/sections/Hero'
 import { StatsStrip } from '@/components/sections/StatsStrip'
@@ -10,7 +8,7 @@ import { ServiceCard } from '@/components/sections/ServiceCard'
 import { WhyChooseGrid } from '@/components/sections/WhyChooseGrid'
 import { CTABand } from '@/components/sections/CTABand'
 import { services } from '@/data/services'
-import { homeStats, homeWhyChoose, homeStory } from '@/data/content'
+import { homeStats, homeWhyChoose } from '@/data/content'
 import styles from './HomePage.module.css'
 
 export default function HomePage() {
@@ -50,31 +48,6 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* Story intro */}
-      <Container narrow as="section" className={styles.story}>
-        <Reveal>
-          <p className="eyebrow">Our Story</p>
-          <h2 className={styles.storyTitle}>Three Generations. One Promise.</h2>
-          {homeStory.paragraphs.map((p) => (
-            <p key={p} className={styles.storyPara}>
-              {p}
-            </p>
-          ))}
-          <Link to="/about" className={styles.storyLink}>
-            Read Our Full Story →
-          </Link>
-        </Reveal>
-        <Reveal delay={120}>
-          <ImageSlot
-            label="Drop a factory / craftsmanship photo"
-            src="/heritage.jpg"
-            alt="Aspera USA manufacturing — facility, precision components, machining, and warehousing"
-            height={420}
-            radius={24}
-          />
-        </Reveal>
-      </Container>
-
       {/* Why choose */}
       <section className="section">
         <Container>
@@ -90,10 +63,7 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <CTABand
-        title="Let's Build Your Next Project Together"
-        text="Whether you're launching a new product or expanding your existing line, Aspera USA is ready to support your business."
-      />
+      <CTABand title="Let's Build Your Next Project Together" />
     </>
   )
 }

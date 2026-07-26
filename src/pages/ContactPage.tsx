@@ -81,7 +81,9 @@ export default function ContactPage() {
               </ul>
 
               <ul className={styles.socials}>
-                {socials.map((s) => (
+                {socials
+                  .filter((s) => s.label !== 'Instagram')
+                  .map((s) => (
                   <li key={s.label}>
                     <a className={styles.socialPill} href={s.href}>
                       {s.label}
@@ -92,7 +94,7 @@ export default function ContactPage() {
               </ul>
             </Reveal>
 
-            {/* Aside: WeChat + email */}
+            {/* Aside: WeChat + Instagram + email */}
             <div className={styles.aside}>
               <Reveal className={styles.wechatCard}>
                 <div className={styles.wechatTitle}>Scan to Connect on WeChat</div>
@@ -100,6 +102,20 @@ export default function ContactPage() {
                   label="Drop WeChat QR code"
                   src="/wechat-qr.png"
                   alt={`WeChat QR code for ${contact.person} — scan to add on WeChat`}
+                  className={styles.qr}
+                  height={220}
+                  maxWidth={220}
+                  radius={16}
+                />
+              </Reveal>
+
+              <Reveal delay={80} className={styles.wechatCard}>
+                <div className={styles.wechatTitle}>Scan to Follow on Instagram</div>
+                <ImageSlot
+                  label="Instagram QR code"
+                  src="/instagram-qr.jpg"
+                  alt="Instagram QR code for @asperainc — scan to follow"
+                  className={styles.qr}
                   height={220}
                   maxWidth={220}
                   radius={16}

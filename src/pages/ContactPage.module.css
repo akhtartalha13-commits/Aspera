@@ -120,6 +120,11 @@
   color: var(--brass-300);
   margin-bottom: 18px;
 }
+
+/* Center the QR image within its card. */
+.qr {
+  margin-inline: auto;
+}
 .emailCard {
   background: var(--surface-cream);
   border-radius: var(--r-2xl);

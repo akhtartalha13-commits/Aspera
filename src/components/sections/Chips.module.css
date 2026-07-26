@@ -1,14 +1,36 @@
-/* Solid variant — navy category cards laid out in a responsive grid. */
-.solid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 16px;
+.carousel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
+
+/* Single-row scroll track. Chips never wrap; the row scrolls horizontally
+   (touch/trackpad) and the arrows nudge it on click. Scrollbar hidden. */
+.track {
+  display: flex;
+  gap: 16px;
+  flex: 1;
+  min-width: 0;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 6px 2px;
+  scrollbar-width: none;
+}
+.track::-webkit-scrollbar {
+  display: none;
+}
+
+.chip {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+/* Solid variant — navy category cards. */
 .solid .chip {
   background: var(--navy-800);
   color: #fff;
   border-radius: var(--r-lg);
-  padding: 20px 22px;
+  padding: 20px 26px;
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 15px;
@@ -19,13 +41,7 @@
   background: var(--navy-700);
 }
 
-/* Outline variant — centered white pills. */
-.outline {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 14px;
-}
+/* Outline variant — white pills. */
 .outline .chip {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -39,4 +55,28 @@
 .outline .chip:hover {
   border-color: var(--brass-500);
   color: var(--brass-700);
+}
+
+/* ---- Arrow controls ------------------------------------------------- */
+.arrow {
+  flex: 0 0 auto;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--navy-800);
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: background var(--t-base), color var(--t-base), opacity var(--t-base);
+}
+.arrow:hover:not(:disabled) {
+  background: var(--navy-800);
+  color: #fff;
+}
+.arrow:disabled {
+  opacity: 0.35;
+  cursor: default;
 }
