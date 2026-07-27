@@ -6,10 +6,10 @@
 
 :root {
   /* ---- Brand color scale -------------------------------------------- */
-  /* Brand blue rebrand — anchored on the icon blue #0c6cde (hue ~213°).
-     Kept legible: deep tones for backgrounds, dark blue for headings/text. */
-  --navy-900: #071f3c; /* deepest — hero / footer backgrounds */
-  --navy-800: #0b3465; /* primary brand blue (dark; bg + text) */
+  /* Brand blue — lighter, brighter blues (kept dark enough that light text on
+     the dark surfaces and blue text on white both stay legible). */
+  --navy-900: #123a72; /* hero / footer backgrounds */
+  --navy-800: #1a5fc4; /* primary brand blue (bg + text) */
   --navy-700: #0c6cde; /* vivid brand blue — gradients / chips */
   --navy-600: #2c3140; /* body ink */
 
@@ -22,7 +22,7 @@
   --cream-200: #ece8e0; /* hairline / border */
 
   /* ---- Semantic text colors ----------------------------------------- */
-  --ink: #0b3465;
+  --ink: #1a5fc4;
   --ink-body: #2c3140;
   --ink-muted: #565d70;
   --ink-soft: #6a7188;
