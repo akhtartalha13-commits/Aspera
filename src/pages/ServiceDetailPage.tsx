@@ -21,6 +21,9 @@ const productSlidesBySlug: Record<string, ProductSlide[]> = {
     { src: '/industrial-slides/ribbed-belt-series.jpg', name: 'Ribbed Belt Series' },
     { src: '/industrial-slides/ele-tool-belt-series.jpg', name: 'Ele Tool Belt Series' },
     { src: '/industrial-slides/synchronous-belt-wheel.jpg', name: 'Synchronous Belt Wheel' },
+    { src: '/industrial-slides/26mm-pu-timing-belt.jpg', name: '26 mm Wide Polyurethane Timing Belt' },
+    { src: '/industrial-slides/pu-timing-belt-roll.jpg', name: 'PU Timing Belt Roll' },
+    { src: '/industrial-slides/open-ended-timing-belts.jpg', name: 'Open-Ended Timing Belts' },
   ],
   'outdoor-apparel': [
     { src: '/outdoor-slides/outdoor-2.jpg', name: 'Ultralight Jacket' },
