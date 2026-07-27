@@ -6,8 +6,9 @@
 
 :root {
   /* ---- Brand color scale -------------------------------------------- */
-  /* Brand blue — single flat brand blue #0c6bde used site-wide. */
-  --navy-900: #0c6bde; /* hero / footer backgrounds */
+  /* Brand blue #0c6bde used site-wide; a darker shade only for large dark
+     backgrounds (hero / footer) so overlaid light text stays readable. */
+  --navy-900: #072a52; /* dark blue — hero / footer backgrounds */
   --navy-800: #0c6bde; /* primary brand blue (bg + text) */
   --navy-700: #0c6bde; /* gradients / chips */
   --navy-600: #2c3140; /* body ink */
