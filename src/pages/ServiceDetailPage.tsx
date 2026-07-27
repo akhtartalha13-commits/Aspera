@@ -8,20 +8,28 @@ import { PageHero } from '@/components/sections/PageHero'
 import { InfoCard } from '@/components/sections/InfoCard'
 import { Chips } from '@/components/sections/Chips'
 import { CTABand } from '@/components/sections/CTABand'
-import { ProductSlideshow } from '@/components/sections/ProductSlideshow'
+import { ProductSlideshow, type ProductSlide } from '@/components/sections/ProductSlideshow'
 import { getServiceBySlug } from '@/data/services'
 import styles from './ServiceDetailPage.module.css'
 
-/** Product photo slideshow shown only on the Industrial Solutions page.
-    Captions are the picture names. */
-const industrialSlides = [
-  { src: '/industrial-slides/synchronous-belt.jpg', name: 'Synchronous Belt' },
-  { src: '/industrial-slides/rubber-synchronous-belt.jpg', name: 'Rubber Synchronous Belt' },
-  { src: '/industrial-slides/pu-synchronous-belt.jpg', name: 'PU Synchronous Belt' },
-  { src: '/industrial-slides/ribbed-belt-series.jpg', name: 'Ribbed Belt Series' },
-  { src: '/industrial-slides/ele-tool-belt-series.jpg', name: 'Ele Tool Belt Series' },
-  { src: '/industrial-slides/synchronous-belt-wheel.jpg', name: 'Synchronous Belt Wheel' },
-]
+/** Per-service "Product Showcase" slideshows, keyed by slug. */
+const productSlidesBySlug: Record<string, ProductSlide[]> = {
+  'industrial-solutions': [
+    { src: '/industrial-slides/synchronous-belt.jpg', name: 'Synchronous Belt' },
+    { src: '/industrial-slides/rubber-synchronous-belt.jpg', name: 'Rubber Synchronous Belt' },
+    { src: '/industrial-slides/pu-synchronous-belt.jpg', name: 'PU Synchronous Belt' },
+    { src: '/industrial-slides/ribbed-belt-series.jpg', name: 'Ribbed Belt Series' },
+    { src: '/industrial-slides/ele-tool-belt-series.jpg', name: 'Ele Tool Belt Series' },
+    { src: '/industrial-slides/synchronous-belt-wheel.jpg', name: 'Synchronous Belt Wheel' },
+  ],
+  'outdoor-apparel': [
+    { src: '/outdoor-slides/outdoor-1.jpg', alt: 'Aspera outdoor apparel — 1' },
+    { src: '/outdoor-slides/outdoor-2.jpg', alt: 'Aspera outdoor apparel — 2' },
+    { src: '/outdoor-slides/outdoor-3.jpg', alt: 'Aspera outdoor apparel — 3' },
+    { src: '/outdoor-slides/outdoor-4.jpg', alt: 'Aspera outdoor apparel — 4' },
+    { src: '/outdoor-slides/outdoor-5.jpg', alt: 'Aspera outdoor apparel — 5' },
+  ],
+}
 
 export default function ServiceDetailPage() {
   const { slug } = useParams()
@@ -54,6 +62,8 @@ export default function ServiceDetailPage() {
   const offersCream = true
   const categoriesCream = false
   const industriesCream = true
+
+  const productSlides = productSlidesBySlug[service.slug]
 
   return (
     <>
@@ -106,15 +116,15 @@ export default function ServiceDetailPage() {
         </Container>
       </section>
 
-      {/* Product slideshow (Industrial Solutions only) */}
-      {service.slug === 'industrial-solutions' && (
+      {/* Product Showcase slideshow (services that define slides) */}
+      {productSlides && (
         <section className="section">
           <Container>
             <Reveal>
               <SectionHeading title="Product Showcase" />
             </Reveal>
             <Reveal>
-              <ProductSlideshow slides={industrialSlides} intervalMs={4000} />
+              <ProductSlideshow slides={productSlides} intervalMs={4000} />
             </Reveal>
           </Container>
         </section>

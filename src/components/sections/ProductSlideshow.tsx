@@ -3,8 +3,10 @@ import styles from './ProductSlideshow.module.css'
 
 export interface ProductSlide {
   src: string
-  /** Caption shown on the image (derived from the picture's name). */
-  name: string
+  /** Optional caption shown on the image. When omitted, no caption is drawn. */
+  name?: string
+  /** Optional alt text; falls back to the name or a generic label. */
+  alt?: string
 }
 
 interface ProductSlideshowProps {
@@ -53,8 +55,13 @@ export function ProductSlideshow({ slides, intervalMs = 4000 }: ProductSlideshow
             className={`${styles.slide} ${i === index ? styles.active : ''}`}
             aria-hidden={i !== index}
           >
-            <img className={styles.img} src={slide.src} alt={slide.name} decoding="async" />
-            <figcaption className={styles.caption}>{slide.name}</figcaption>
+            <img
+              className={styles.img}
+              src={slide.src}
+              alt={slide.alt ?? slide.name ?? `Slide ${i + 1}`}
+              decoding="async"
+            />
+            {slide.name && <figcaption className={styles.caption}>{slide.name}</figcaption>}
           </figure>
         ))}
       </div>
@@ -65,7 +72,7 @@ export function ProductSlideshow({ slides, intervalMs = 4000 }: ProductSlideshow
             key={slide.src}
             type="button"
             className={`${styles.dot} ${i === index ? styles.dotActive : ''}`}
-            aria-label={slide.name}
+            aria-label={slide.name ?? `Go to slide ${i + 1}`}
             aria-current={i === index}
             onClick={() => goTo(i)}
           />
