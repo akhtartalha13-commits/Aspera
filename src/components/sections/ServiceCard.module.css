@@ -45,12 +45,12 @@
   width: 64px;
   height: 64px;
   border-radius: var(--r-md);
-  background: rgba(200, 155, 74, 0.1);
+  background: rgba(46, 144, 250, 0.1);
   margin-bottom: 20px;
   transition: background var(--t-base);
 }
 .card:hover .iconWrap {
-  background: rgba(200, 155, 74, 0.18);
+  background: rgba(46, 144, 250, 0.18);
 }
 
 /* Product-photo thumbnail variant (replaces the line icon). */

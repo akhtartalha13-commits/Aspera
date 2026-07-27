@@ -34,7 +34,7 @@
   transition: background var(--t-base);
 }
 .cell:hover {
-  background: #fcfaf5;
+  background: #f5f9fd;
 }
 
 .title {

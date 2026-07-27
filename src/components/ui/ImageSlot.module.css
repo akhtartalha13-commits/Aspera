@@ -4,7 +4,7 @@
   overflow: hidden;
   display: grid;
   place-items: center;
-  background: linear-gradient(135deg, #e9e4d9 0%, #f3efe6 55%, #e4ddcf 100%);
+  background: linear-gradient(135deg, #e6eef7 0%, #f1f6fc 55%, #e1eaf4 100%);
   color: var(--ink-soft);
 }
 
@@ -15,8 +15,8 @@
   inset: 0;
   background-image: repeating-linear-gradient(
     135deg,
-    rgba(11, 52, 101, 0.03) 0,
-    rgba(11, 52, 101, 0.03) 1px,
+    rgba(13, 38, 71, 0.03) 0,
+    rgba(13, 38, 71, 0.03) 1px,
     transparent 1px,
     transparent 12px
   );

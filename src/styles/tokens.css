@@ -6,32 +6,35 @@
 
 :root {
   /* ---- Brand color scale -------------------------------------------- */
-  /* Brand blue — lighter, brighter blues (kept dark enough that light text on
-     the dark surfaces and blue text on white both stay legible). */
-  --navy-900: #123a72; /* hero / footer backgrounds */
-  --navy-800: #1a5fc4; /* primary brand blue (bg + text) */
-  --navy-700: #0c6cde; /* vivid brand blue — gradients / chips */
-  --navy-600: #2c3140; /* body ink */
+  /* Azure Professional — a cohesive light-blue-forward system.
+     Deep blues anchor dark surfaces & headings; a bright blue is the primary
+     accent; cool neutrals replace the old warm cream/gold. Token names kept
+     (navy, brass, cream) so components map without edits — the roles are now:
+     navy = structural blue, brass = blue accent, cream = cool neutral. */
+  --navy-900: #0b2545; /* deepest blue — hero / footer backgrounds */
+  --navy-800: #133a6e; /* dark blue — headings, dark sections, nav */
+  --navy-700: #2e90fa; /* bright light blue — gradients / chips / highlights */
+  --navy-600: #33404f; /* dark slate (secondary ink) */
 
-  --brass-500: #c89b4a; /* primary accent (gold) */
-  --brass-600: #b98b38; /* accent hover */
-  --brass-700: #a97f38; /* link hover */
-  --brass-300: #e0bc7a; /* light gold on dark */
+  --brass-500: #2e6fe0; /* primary blue accent — buttons, eyebrows, links */
+  --brass-600: #1f5fd0; /* accent hover (darker blue) */
+  --brass-700: #1a54be; /* link hover text (dark blue) */
+  --brass-300: #7fb4ff; /* light blue accent on dark backgrounds */
 
-  --cream-100: #f7f4ee; /* warm section background */
-  --cream-200: #ece8e0; /* hairline / border */
+  --cream-100: #f2f7fc; /* cool tinted section background */
+  --cream-200: #e2e9f2; /* cool hairline / border */
 
   /* ---- Semantic text colors ----------------------------------------- */
-  --ink: #1a5fc4;
-  --ink-body: #2c3140;
-  --ink-muted: #565d70;
-  --ink-soft: #6a7188;
-  --ink-faint: #8891a5;
+  --ink: #133a6e; /* headings */
+  --ink-body: #333e4e; /* body copy (cool slate) */
+  --ink-muted: #56617a;
+  --ink-soft: #6b7688;
+  --ink-faint: #93a0b2;
 
   --on-dark: #ffffff;
-  --on-dark-muted: #c7cdda;
-  --on-dark-soft: #aeb6c8;
-  --on-dark-faint: #8891a5;
+  --on-dark-muted: #bcc9db;
+  --on-dark-soft: #a2b2c8;
+  --on-dark-faint: #8494ab;
 
   /* ---- Surfaces ----------------------------------------------------- */
   --surface: #ffffff;
@@ -93,9 +96,9 @@
   --r-pill: 999px;
 
   /* ---- Shadow / elevation ------------------------------------------- */
-  --shadow-sm: 0 2px 16px rgba(11, 52, 101, 0.06);
-  --shadow-md: 0 10px 28px rgba(11, 52, 101, 0.1);
-  --shadow-lg: 0 16px 36px rgba(11, 52, 101, 0.12);
+  --shadow-sm: 0 2px 16px rgba(13, 38, 71, 0.06);
+  --shadow-md: 0 10px 28px rgba(13, 38, 71, 0.1);
+  --shadow-lg: 0 16px 36px rgba(13, 38, 71, 0.12);
   --shadow-ring: 0 0 0 1px var(--border);
 
   /* ---- Motion ------------------------------------------------------- */

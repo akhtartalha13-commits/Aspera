@@ -1,6 +1,6 @@
 .btn {
   --btn-bg: var(--brass-500);
-  --btn-fg: var(--navy-800);
+  --btn-fg: #ffffff;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -38,12 +38,12 @@
 .primary {
   background: var(--btn-bg);
   color: var(--btn-fg);
-  box-shadow: 0 6px 18px rgba(200, 155, 74, 0.28);
+  box-shadow: 0 6px 18px rgba(46, 111, 224, 0.3);
 }
 .primary:hover {
   background: var(--brass-600);
-  color: var(--navy-800);
-  box-shadow: 0 12px 26px rgba(200, 155, 74, 0.36);
+  color: #fff;
+  box-shadow: 0 12px 26px rgba(46, 111, 224, 0.4);
 }
 
 .outline {
