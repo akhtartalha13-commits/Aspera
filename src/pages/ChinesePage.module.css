@@ -358,11 +358,20 @@
   color: var(--navy-800);
   font-weight: 600;
 }
+.qrCol {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
 .qrCard {
   background: var(--navy-800);
   border-radius: var(--r-2xl);
   padding: 36px 32px;
   text-align: center;
+}
+/* Center the QR image within its card. */
+.qr {
+  margin-inline: auto;
 }
 .qrTitle {
   font-family: var(--font-sc);

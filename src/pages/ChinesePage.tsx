@@ -160,16 +160,31 @@ export default function ChinesePage() {
               </div>
             </div>
           </div>
-          <div className={styles.qrCard}>
-            <div className={styles.qrTitle}>扫码添加微信</div>
-            <ImageSlot
-              label="放置微信二维码"
-              src="/wechat-qr.png"
-              alt="微信二维码 — 扫码添加我们"
-              height={220}
-              maxWidth={220}
-              radius={16}
-            />
+          <div className={styles.qrCol}>
+            <div className={styles.qrCard}>
+              <div className={styles.qrTitle}>扫码添加微信</div>
+              <ImageSlot
+                label="放置微信二维码"
+                src="/wechat-qr.png"
+                alt="微信二维码 — 扫码添加我们"
+                className={styles.qr}
+                height={220}
+                maxWidth={220}
+                radius={16}
+              />
+            </div>
+            <div className={styles.qrCard}>
+              <div className={styles.qrTitle}>扫码关注 Instagram</div>
+              <ImageSlot
+                label="Instagram 二维码"
+                src="/instagram-qr.jpg"
+                alt="Instagram 二维码 — @asperainc"
+                className={styles.qr}
+                height={220}
+                maxWidth={220}
+                radius={16}
+              />
+            </div>
           </div>
         </div>
       </section>
