@@ -23,11 +23,10 @@ const productSlidesBySlug: Record<string, ProductSlide[]> = {
     { src: '/industrial-slides/synchronous-belt-wheel.jpg', name: 'Synchronous Belt Wheel' },
   ],
   'outdoor-apparel': [
-    { src: '/outdoor-slides/outdoor-1.jpg', alt: 'Aspera outdoor apparel — 1' },
-    { src: '/outdoor-slides/outdoor-2.jpg', alt: 'Aspera outdoor apparel — 2' },
-    { src: '/outdoor-slides/outdoor-3.jpg', alt: 'Aspera outdoor apparel — 3' },
-    { src: '/outdoor-slides/outdoor-4.jpg', alt: 'Aspera outdoor apparel — 4' },
-    { src: '/outdoor-slides/outdoor-5.jpg', alt: 'Aspera outdoor apparel — 5' },
+    { src: '/outdoor-slides/outdoor-2.jpg', name: 'Ultralight Jacket' },
+    { src: '/outdoor-slides/outdoor-3.jpg', name: 'Seam-Sealed Softshell Jacket' },
+    { src: '/outdoor-slides/outdoor-4.jpg', name: 'Seam-Sealed Hardshell Single Layer Jacket' },
+    { src: '/outdoor-slides/outdoor-5.jpg', name: 'Unisex 3-in-1 Jacket' },
   ],
 }
 
