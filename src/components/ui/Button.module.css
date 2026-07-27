@@ -1,8 +1,6 @@
 .btn {
   --btn-bg: var(--brass-500);
-  /* Dark label so the gold primary button stays readable (the brand blue
-     would be too low-contrast on gold). */
-  --btn-fg: #0a2340;
+  --btn-fg: var(--navy-800);
   display: inline-flex;
   align-items: center;
   justify-content: center;
