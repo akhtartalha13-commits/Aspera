@@ -233,6 +233,13 @@
   transform: translateY(-5px);
   box-shadow: var(--shadow-md);
 }
+.productThumb {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--r-lg);
+  display: block;
+}
 .productLabel {
   font-family: var(--font-sc);
   font-weight: 700;

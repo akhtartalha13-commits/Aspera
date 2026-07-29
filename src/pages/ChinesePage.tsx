@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import { usePageMeta } from '@/hooks/usePageMeta'
 import { Logo } from '@/components/ui/Logo'
-import { Icon } from '@/components/ui/Icon'
 import { HeroSlideshow } from '@/components/ui/HeroSlideshow'
 import { ImageSlot } from '@/components/ui/ImageSlot'
 import { Reveal } from '@/components/ui/Reveal'
@@ -90,7 +89,12 @@ export default function ChinesePage() {
             {cnProducts.map((product, i) => (
               <Reveal key={product.label} delay={i * 60}>
                 <Link to={product.to} className={styles.productCard}>
-                  <Icon name={product.icon} size={36} color="var(--brass-500)" />
+                  <img
+                    className={styles.productThumb}
+                    src={`/service-icons/${product.to.split('/').pop()}.jpg?v=3`}
+                    alt={product.label}
+                    loading="lazy"
+                  />
                   <span className={styles.productLabel}>{product.label}</span>
                 </Link>
               </Reveal>
