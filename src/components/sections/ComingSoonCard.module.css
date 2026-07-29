@@ -1,0 +1,76 @@
+.card {
+  position: relative;
+  display: flex;
+  height: 100%;
+  min-height: 240px;
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  /* Light-blue gradient over the gear image; gradient alone is a graceful
+     fallback until /coming-soon.jpg is added. */
+  background-color: var(--cream-100);
+  background-image: linear-gradient(
+      100deg,
+      rgba(226, 236, 250, 0.97) 0%,
+      rgba(226, 236, 250, 0.78) 40%,
+      rgba(226, 236, 250, 0.32) 100%
+    ),
+    url('/coming-soon.jpg');
+  background-size: cover;
+  background-position: center right;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--t-base), box-shadow var(--t-base);
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 36px 32px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 26px;
+  line-height: 1.1;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--navy-900);
+  margin: 0 0 14px;
+}
+.titleSub {
+  display: block;
+  color: var(--navy-700);
+}
+
+.desc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink-body);
+  margin: 0 0 22px;
+  max-width: 300px;
+}
+
+.button {
+  margin-top: auto;
+  display: inline-block;
+  background: var(--brass-500);
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+  padding: 13px 28px;
+  border-radius: var(--r-pill);
+  transition: background var(--t-base), transform var(--t-base);
+}
+.button:hover {
+  background: var(--brass-600);
+  color: #fff;
+  transform: translateY(-2px);
+}

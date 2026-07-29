@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
 import { Button } from '@/components/ui/Button'
+import { contact } from '@/data/site'
 import styles from './CTABand.module.css'
 
 interface CTABandProps {
@@ -7,7 +8,7 @@ interface CTABandProps {
   title: ReactNode
   text?: string
   buttonLabel?: string
-  /** Internal route (default) or external href. */
+  /** Pass an internal route to override; defaults to the quote mailto. */
   to?: string
   href?: string
 }
@@ -18,8 +19,8 @@ export function CTABand({
   title,
   text,
   buttonLabel = 'Request a Quote →',
-  to = '/contact',
-  href,
+  to,
+  href = contact.quoteHref,
 }: CTABandProps) {
   return (
     <section className={styles.band}>
@@ -28,12 +29,12 @@ export function CTABand({
         <h2 className={styles.title}>{title}</h2>
         {text && <p className={styles.text}>{text}</p>}
         <div className={styles.action}>
-          {href ? (
-            <Button href={href} size="lg">
+          {to ? (
+            <Button to={to} size="lg">
               {buttonLabel}
             </Button>
           ) : (
-            <Button to={to} size="lg">
+            <Button href={href} size="lg">
               {buttonLabel}
             </Button>
           )}

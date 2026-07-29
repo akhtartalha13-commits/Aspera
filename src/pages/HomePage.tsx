@@ -5,6 +5,7 @@ import { SectionHeading } from '@/components/ui/SectionHeading'
 import { Hero } from '@/components/sections/Hero'
 import { StatsStrip } from '@/components/sections/StatsStrip'
 import { ServiceCard } from '@/components/sections/ServiceCard'
+import { ComingSoonCard } from '@/components/sections/ComingSoonCard'
 import { WhyChooseGrid } from '@/components/sections/WhyChooseGrid'
 import { CTABand } from '@/components/sections/CTABand'
 import { services } from '@/data/services'
@@ -45,6 +46,9 @@ export default function HomePage() {
                 />
               </Reveal>
             ))}
+            <Reveal delay={services.length * 70}>
+              <ComingSoonCard />
+            </Reveal>
           </div>
         </Container>
       </section>

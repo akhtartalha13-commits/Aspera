@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 import { Logo } from '@/components/ui/Logo'
 import { Button } from '@/components/ui/Button'
-import { primaryNav } from '@/data/site'
+import { primaryNav, contact } from '@/data/site'
 import styles from './Header.module.css'
 
 export function Header() {
@@ -54,7 +54,7 @@ export function Header() {
         </nav>
 
         <div className={styles.desktopCta}>
-          <Button to="/contact" size="md">
+          <Button href={contact.quoteHref} size="md">
             Request a Quote
           </Button>
         </div>
@@ -91,7 +91,7 @@ export function Header() {
               {link.label}
             </NavLink>
           ))}
-          <Button to="/contact" size="lg" className={styles.mobileCta}>
+          <Button href={contact.quoteHref} size="lg" className={styles.mobileCta}>
             Request a Quote
           </Button>
         </nav>

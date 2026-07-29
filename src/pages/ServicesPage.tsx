@@ -5,6 +5,7 @@ import { Reveal } from '@/components/ui/Reveal'
 import { Icon } from '@/components/ui/Icon'
 import { PageHero } from '@/components/sections/PageHero'
 import { ServiceCard } from '@/components/sections/ServiceCard'
+import { ComingSoonCard } from '@/components/sections/ComingSoonCard'
 import { CTABand } from '@/components/sections/CTABand'
 import { services } from '@/data/services'
 import styles from './ServicesPage.module.css'
@@ -54,6 +55,10 @@ export default function ServicesPage() {
                   Talk to Us →
                 </Link>
               </div>
+            </Reveal>
+
+            <Reveal delay={(services.length + 1) * 60}>
+              <ComingSoonCard />
             </Reveal>
           </div>
         </Container>

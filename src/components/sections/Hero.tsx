@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/Button'
 import { HeroSlideshow } from '@/components/ui/HeroSlideshow'
-import { brand } from '@/data/site'
+import { brand, contact } from '@/data/site'
 import styles from './Hero.module.css'
 
 /** Home page hero — full-bleed dark section with headline + dual CTAs. */
@@ -29,7 +29,7 @@ export function Hero() {
             built into every product.
           </p>
           <div className={styles.actions}>
-            <Button to="/contact" size="lg">
+            <Button href={contact.quoteHref} size="lg">
               Request a Quote →
             </Button>
             <Button to="/about" size="lg" variant="outline">

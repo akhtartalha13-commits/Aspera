@@ -28,6 +28,7 @@ export const contact = {
   phoneHref: 'tel:+19176835639',
   email: 'asperausa@gmail.com',
   emailHref: 'mailto:asperausa@gmail.com',
+  quoteHref: 'mailto:asperausa@gmail.com?subject=Quote%20Request%20%E2%80%94%20Aspera%20USA',
   website: 'asperausa.com',
   websiteHref: 'https://asperausa.com',
 } as const
