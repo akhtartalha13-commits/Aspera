@@ -1,6 +1,8 @@
 .page {
   font-family: var(--font-sc);
   color: var(--ink-body);
+  /* Tighter vertical rhythm than the global --section-y (72–120px). */
+  --cn-section-y: clamp(44px, 5vw, 72px);
 }
 .page h1,
 .page h2 {
@@ -66,9 +68,9 @@
   inset: 0;
   background: linear-gradient(
     100deg,
-    rgba(11, 37, 69, 0.94) 0%,
-    rgba(11, 37, 69, 0.72) 45%,
-    rgba(11, 37, 69, 0.35) 100%
+    rgba(11, 37, 69, 0.72) 0%,
+    rgba(11, 37, 69, 0.48) 45%,
+    rgba(11, 37, 69, 0.18) 100%
   );
 }
 .heroInner {
@@ -177,7 +179,7 @@
 .about {
   max-width: var(--maxw-narrow);
   margin-inline: auto;
-  padding: var(--section-y) var(--gutter);
+  padding: var(--cn-section-y) var(--gutter);
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 64px;
@@ -209,7 +211,7 @@
 /* ---- Products ------------------------------------------------------- */
 .products {
   background: var(--surface-cream);
-  padding: var(--section-y) var(--gutter);
+  padding: var(--cn-section-y) var(--gutter);
 }
 .productGrid {
   display: grid;
@@ -242,7 +244,7 @@
 .services {
   max-width: var(--maxw-narrow);
   margin-inline: auto;
-  padding: var(--section-y) var(--gutter);
+  padding: var(--cn-section-y) var(--gutter);
 }
 .serviceGrid {
   display: grid;
@@ -264,7 +266,7 @@
 /* ---- Why choose ----------------------------------------------------- */
 .why {
   background: var(--navy-800);
-  padding: var(--section-y) var(--gutter);
+  padding: var(--cn-section-y) var(--gutter);
 }
 .whyInner {
   max-width: var(--maxw-narrow);
@@ -290,7 +292,7 @@
 .contact {
   max-width: var(--maxw-narrow);
   margin-inline: auto;
-  padding: var(--section-y) var(--gutter);
+  padding: var(--cn-section-y) var(--gutter);
 }
 .contactGrid {
   display: grid;
