@@ -145,8 +145,8 @@ export default function ServiceDetailPage() {
           <Container>
             <Reveal>
               <SectionHeading
-                title="Design your gift for beloved/children/respected/friends/it"
-                subtitle="at Holidays, Valentine's Day, Mother's Day/Father's Day/Graduation/Baby Shower"
+                title="Design your gift for beloved/children/respected/friends"
+                subtitle="At Holidays, Valentine's Day, Mother's Day/Father's Day/Graduation/Baby Shower"
               />
             </Reveal>
             <MakingCarousel
