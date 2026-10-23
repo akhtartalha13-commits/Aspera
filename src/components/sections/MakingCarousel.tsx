@@ -2,8 +2,8 @@ import { useEffect, useRef, useState } from 'react'
 import styles from './MakingCarousel.module.css'
 
 const videos = [
-  { src: '/industrial-videos/factory.mp4', title: 'Factory Tour' },
   { src: '/industrial-videos/production.mp4', title: 'Making of Training Belt' },
+  { src: '/industrial-videos/factory.mp4', title: 'Factory Tour' },
   { src: '/industrial-videos/making.mp4', title: 'Making in Action' },
 ]
 
