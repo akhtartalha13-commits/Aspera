@@ -96,6 +96,13 @@ export default function ServiceDetailPage() {
           <Reveal>
             <SectionHeading title="What We Offer" />
           </Reveal>
+          <div className={styles.offerGrid}>
+            {service.offers.map((offer, i) => (
+              <Reveal key={offer.title} delay={i * 70}>
+                <InfoCard title={offer.title} desc={offer.desc} />
+              </Reveal>
+            ))}
+          </div>
           {service.slug === 'outdoor-apparel' && (
             <div className={styles.videoGrid}>
               {[
@@ -129,13 +136,6 @@ export default function ServiceDetailPage() {
               ))}
             </div>
           )}
-          <div className={styles.offerGrid}>
-            {service.offers.map((offer, i) => (
-              <Reveal key={offer.title} delay={i * 70}>
-                <InfoCard title={offer.title} desc={offer.desc} />
-              </Reveal>
-            ))}
-          </div>
         </Container>
       </section>
 

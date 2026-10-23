@@ -30,7 +30,7 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 28px;
-  margin-bottom: var(--space-12);
+  margin-top: var(--space-12);
 }
 
 .videoCard {
