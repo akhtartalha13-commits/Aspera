@@ -9,6 +9,7 @@ import { InfoCard } from '@/components/sections/InfoCard'
 import { Chips } from '@/components/sections/Chips'
 import { CTABand } from '@/components/sections/CTABand'
 import { ProductSlideshow, type ProductSlide } from '@/components/sections/ProductSlideshow'
+import { MakingCarousel } from '@/components/sections/MakingCarousel'
 import { getServiceBySlug } from '@/data/services'
 import styles from './ServiceDetailPage.module.css'
 
@@ -172,38 +173,7 @@ export default function ServiceDetailPage() {
             <Reveal>
               <SectionHeading title="Making" />
             </Reveal>
-            <div className={`${styles.videoGrid} ${styles.makingGrid}`}>
-              {[
-                { src: '/industrial-videos/factory.mp4', title: 'Factory Showcase', label: '01' },
-                { src: '/industrial-videos/production.mp4', title: 'Production Showcase', label: '02' },
-                { src: '/industrial-videos/making.mp4', title: 'Making in Action', label: '03' },
-              ].map((video) => (
-                <figure className={styles.videoCard} key={video.src}>
-                  <video
-                    className={styles.videoPlayer}
-                    controls
-                    playsInline
-                    preload="metadata"
-                    aria-label={video.title}
-                    onPlay={(event) => {
-                      const current = event.currentTarget
-                      current.closest('section')?.querySelectorAll('video').forEach((player) => {
-                        if (player !== current) player.pause()
-                      })
-                    }}
-                  >
-                    <source src={video.src} type="video/mp4" />
-                    Your browser does not support embedded video.{' '}
-                    <a href={video.src}>Download {video.title}</a>.
-                  </video>
-                  <figcaption className={styles.videoCaption}>
-                    <span className={styles.videoNumber}>{video.label}</span>
-                    <h3>{video.title}</h3>
-                    <span className={styles.videoTag}>Making</span>
-                  </figcaption>
-                </figure>
-              ))}
-            </div>
+            <MakingCarousel />
           </Container>
         </section>
       )}

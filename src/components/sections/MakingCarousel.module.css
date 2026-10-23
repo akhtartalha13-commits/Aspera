@@ -1,0 +1,55 @@
+.carousel {
+  overflow: hidden;
+  padding: 20px 0 8px;
+}
+
+.stage {
+  position: relative;
+  /* Reserve height for a 72%-wide 16:9 player and its caption. */
+  padding-top: calc(40.5% + 94px);
+}
+
+.card {
+  position: absolute;
+  top: 0;
+  left: 14%;
+  width: 72%;
+  margin: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  background: var(--surface);
+  box-shadow: var(--shadow-lg);
+  transition: transform 450ms var(--ease), opacity 450ms var(--ease), filter 450ms var(--ease);
+}
+
+.center { z-index: 3; transform: translateX(0) scale(1); }
+.left { z-index: 1; transform: translateX(-67%) scale(0.78); filter: blur(3px); opacity: 0.55; }
+.right { z-index: 1; transform: translateX(67%) scale(0.78); filter: blur(3px); opacity: 0.55; }
+.media { position: relative; background: var(--navy-900); }
+.media video { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain; color-scheme: dark; }
+.preview { position: absolute; inset: 0; width: 100%; border: 0; cursor: pointer; background: rgba(11, 37, 69, 0.15); color: white; font-size: 48px; }
+.left .preview { text-align: right; padding-right: 12%; }
+.right .preview { text-align: left; padding-left: 12%; }
+.card:focus-within { outline: 3px solid var(--brass-500); outline-offset: -3px; }
+.caption { display: flex; align-items: center; gap: 12px; padding: 22px; }
+.caption h3 { flex: 1; margin: 0; color: var(--ink); font-size: 17px; line-height: 1.4; }
+.number { color: var(--brass-500); font-size: 13px; font-weight: 700; }
+.tag { padding: 5px 10px; border-radius: var(--r-pill); background: var(--cream-100); color: var(--ink-muted); font-size: 12px; }
+.navigation { display: flex; align-items: center; justify-content: center; gap: 20px; }
+.navigation button { width: 48px; height: 48px; border: 1px solid var(--border); border-radius: 50%; background: var(--surface); color: var(--ink); font-size: 30px; cursor: pointer; }
+.navigation button:hover { background: var(--cream-100); }
+.navigation button:focus-visible { outline: 3px solid var(--brass-500); outline-offset: 3px; }
+.navigation p { margin: 0; text-align: center; color: var(--ink); font-size: 14px; }
+.navigation p span { display: block; color: var(--ink-muted); font-size: 12px; margin-top: 4px; }
+@media (max-width: 760px) {
+  .card { width: 84%; left: 8%; }
+  .stage { padding-top: calc(47.25% + 100px); }
+  .caption { padding: 16px 12px; gap: 8px; }
+  .caption h3 { font-size: 14px; }
+  .tag { display: none; }
+  .navigation { gap: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card { transition: none; }
+}
