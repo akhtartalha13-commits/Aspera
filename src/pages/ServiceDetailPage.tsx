@@ -96,6 +96,39 @@ export default function ServiceDetailPage() {
           <Reveal>
             <SectionHeading title="What We Offer" />
           </Reveal>
+          {service.slug === 'outdoor-apparel' && (
+            <div className={styles.videoGrid}>
+              {[
+                { src: '/outdoor-videos/outdoor-showcase.mp4', title: 'Outdoor Apparel Showcase', label: '01' },
+                { src: '/outdoor-videos/three-in-one.mp4', title: '3-in-1 Jacket Showcase', label: '02' },
+              ].map((video) => (
+                <figure className={styles.videoCard} key={video.src}>
+                  <video
+                    className={styles.videoPlayer}
+                    controls
+                    playsInline
+                    preload="metadata"
+                    aria-label={video.title}
+                    onPlay={(event) => {
+                      const current = event.currentTarget
+                      current.closest('section')?.querySelectorAll('video').forEach((player) => {
+                        if (player !== current) player.pause()
+                      })
+                    }}
+                  >
+                    <source src={video.src} type="video/mp4" />
+                    Your browser does not support embedded video.{' '}
+                    <a href={video.src}>Download {video.title}</a>.
+                  </video>
+                  <figcaption className={styles.videoCaption}>
+                    <span className={styles.videoNumber}>{video.label}</span>
+                    <h3>{video.title}</h3>
+                    <span className={styles.videoTag}>Product film</span>
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          )}
           <div className={styles.offerGrid}>
             {service.offers.map((offer, i) => (
               <Reveal key={offer.title} delay={i * 70}>
