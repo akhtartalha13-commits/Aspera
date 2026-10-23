@@ -90,8 +90,8 @@ export default function ChinesePage() {
               <Reveal key={product.label} delay={i * 60}>
                 <Link to={product.to} className={styles.productCard}>
                   <img
-                    className={styles.productThumb}
-                    src={`/service-icons/${product.to.split('/').pop()}.jpg?v=3`}
+                    className={`${styles.productThumb} ${product.to === '/services/personalized-gifts' ? styles.giftThumb : ''}`}
+                    src={product.to === '/services/personalized-gifts' ? '/service-icons/personalized-gifts-logo.png' : `/service-icons/${product.to.split('/').pop()}.jpg?v=3`}
                     alt={product.label}
                     loading="lazy"
                   />

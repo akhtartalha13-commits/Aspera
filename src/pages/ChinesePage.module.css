@@ -442,3 +442,9 @@
     order: 2;
   }
 }
+
+.giftThumb {
+  object-fit: contain;
+  object-position: center;
+  background: #fff;
+}
