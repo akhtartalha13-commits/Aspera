@@ -102,3 +102,13 @@
 .card:hover .cta {
   gap: 12px;
 }
+
+.logoWrap {
+  height: 116px;
+}
+.logoWrap .thumb {
+  object-fit: contain;
+}
+.card:hover .logoWrap .thumb {
+  transform: none;
+}

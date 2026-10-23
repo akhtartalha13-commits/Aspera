@@ -10,14 +10,15 @@ interface ServiceCardProps {
   desc: string
   /** Optional product photo shown instead of the line icon. */
   image?: string
+  imageFit?: 'cover' | 'contain'
   /** 'white' for the home grid, 'cream' for the services index grid. */
   variant?: 'white' | 'cream'
 }
 
-export function ServiceCard({ to, icon, title, desc, image, variant = 'white' }: ServiceCardProps) {
+export function ServiceCard({ to, icon, title, desc, image, imageFit = 'cover', variant = 'white' }: ServiceCardProps) {
   return (
     <Link to={to} className={`${styles.card} ${styles[variant]}`}>
-      <span className={`${styles.iconWrap} ${image ? styles.imageWrap : ''}`}>
+      <span className={`${styles.iconWrap} ${image ? styles.imageWrap : ''} ${image && imageFit === 'contain' ? styles.logoWrap : ''}`}>
         {image ? (
           <img className={styles.thumb} src={image} alt={title} loading="lazy" decoding="async" />
         ) : (
