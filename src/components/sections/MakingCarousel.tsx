@@ -2,8 +2,8 @@ import { useEffect, useRef, useState } from 'react'
 import styles from './MakingCarousel.module.css'
 
 const videos = [
-  { src: '/industrial-videos/factory.mp4', title: 'Factory Showcase' },
-  { src: '/industrial-videos/production.mp4', title: 'Production Showcase' },
+  { src: '/industrial-videos/factory.mp4', title: 'Factory Tour' },
+  { src: '/industrial-videos/production.mp4', title: 'Making of Training Belt' },
   { src: '/industrial-videos/making.mp4', title: 'Making in Action' },
 ]
 
@@ -69,7 +69,7 @@ export function MakingCarousel() {
                 </video>
                 {index !== active && (
                   <button type="button" className={styles.preview} onClick={() => select(index)} aria-label={`Play ${video.title}`}>
-                    <span aria-hidden="true">{position === 'left' ? '‹' : '›'}</span>
+                    <span aria-hidden="true">{position === 'left' ? '\u2039' : '\u203a'}</span>
                   </button>
                 )}
               </div>
@@ -83,9 +83,9 @@ export function MakingCarousel() {
         })}
       </div>
       <div className={styles.navigation}>
-        <button type="button" onClick={() => select(active - 1)} aria-label="Previous video">‹</button>
+        <button type="button" onClick={() => select(active - 1)} aria-label="Previous video">&#8249;</button>
         <p aria-live="polite" aria-atomic="true">{videos[active].title} <span>{active + 1} / {videos.length}</span></p>
-        <button type="button" onClick={() => select(active + 1)} aria-label="Next video">›</button>
+        <button type="button" onClick={() => select(active + 1)} aria-label="Next video">&#8250;</button>
       </div>
     </div>
   )
