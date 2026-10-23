@@ -1,13 +1,19 @@
 import { useEffect, useRef, useState } from 'react'
 import styles from './MakingCarousel.module.css'
 
-const videos = [
+const industrialVideos = [
   { src: '/industrial-videos/production.mp4', title: 'Factory Tour' },
   { src: '/industrial-videos/factory.mp4', title: 'Making of Training Belt' },
   { src: '/industrial-videos/making.mp4', title: 'Making in Action' },
 ]
 
-export function MakingCarousel() {
+interface MakingCarouselProps {
+  videos?: { src: string; title: string }[]
+  label?: string
+  tag?: string
+}
+
+export function MakingCarousel({ videos = industrialVideos, label = 'Making videos', tag = 'Making' }: MakingCarouselProps) {
   const [active, setActive] = useState(0)
   const players = useRef<(HTMLVideoElement | null)[]>([])
   const root = useRef<HTMLDivElement>(null)
@@ -45,7 +51,7 @@ export function MakingCarousel() {
   }
 
   return (
-    <div ref={root} className={styles.carousel} role="region" aria-roledescription="carousel" aria-label="Making videos">
+    <div ref={root} className={styles.carousel} role="region" aria-roledescription="carousel" aria-label={label}>
       <div className={styles.stage}>
         {videos.map((video, index) => {
           const position = index === active ? 'center' : index === (active + 1) % videos.length ? 'right' : 'left'
@@ -76,7 +82,7 @@ export function MakingCarousel() {
               <figcaption className={styles.caption}>
                 <span className={styles.number}>0{index + 1}</span>
                 <h3>{video.title}</h3>
-                <span className={styles.tag}>Making</span>
+                <span className={styles.tag}>{tag}</span>
               </figcaption>
             </figure>
           )

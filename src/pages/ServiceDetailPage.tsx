@@ -140,6 +140,28 @@ export default function ServiceDetailPage() {
         </Container>
       </section>
 
+      {service.slug === 'personalized-gifts' && (
+        <section className="section" aria-label="Design your gift">
+          <Container>
+            <Reveal>
+              <SectionHeading
+                title="Design your gift for beloved/children/respected/friends/it"
+                subtitle="at Holidays, Valentine's Day, Mother's Day/Father's Day/Graduation/Baby Shower"
+              />
+            </Reveal>
+            <MakingCarousel
+              label="Personalized gift videos"
+              tag="Gift design"
+              videos={[
+                { src: '/gift-videos/handwoven.mp4', title: 'Handwoven' },
+                { src: '/gift-videos/steampunk.mp4', title: 'SteamPunk' },
+                { src: '/gift-videos/making-steampunk.mp4', title: 'Making of SteamPumk' },
+              ]}
+            />
+          </Container>
+        </section>
+      )}
+
       {/* Product Categories */}
       <section className={`section ${categoriesCream ? 'section--cream' : ''}`}>
         <Container>
