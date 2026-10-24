@@ -32,7 +32,7 @@ export default function ServicesPage() {
                 <ServiceCard
                   to={`/services/${service.slug}`}
                   icon={service.icon}
-                  image={service.slug === 'personalized-gifts' ? '/service-icons/personalized-gifts-logo.png' : `/service-icons/${service.slug}.jpg?v=3`}
+                  image={service.slug === 'personalized-gifts' ? '/service-icons/personalized-gifts-pen-holder.jpg' : `/service-icons/${service.slug}.jpg?v=3`}
                   imageFit={service.slug === 'personalized-gifts' ? 'contain' : 'cover'}
                   title={service.title}
                   desc={service.servicesDesc}
