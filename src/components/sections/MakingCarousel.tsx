@@ -55,8 +55,9 @@ export function MakingCarousel({ videos = industrialVideos, label = 'Making vide
       <div className={styles.stage}>
         {videos.map((video, index) => {
           const position = index === active ? 'center' : index === (active + 1) % videos.length ? 'right' : 'left'
+          const visible = index === active || index === (active + 1) % videos.length || index === (active - 1 + videos.length) % videos.length
           return (
-            <figure key={video.src} className={`${styles.card} ${styles[position]}`}>
+            <figure key={video.src} hidden={!visible} className={`${styles.card} ${styles[position]}`}>
               <div className={styles.media}>
                 <video
                   ref={(element) => { players.current[index] = element }}

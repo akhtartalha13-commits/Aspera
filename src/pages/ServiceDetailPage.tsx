@@ -156,6 +156,8 @@ export default function ServiceDetailPage() {
                 { src: '/gift-videos/handwoven.mp4', title: 'Handwoven' },
                 { src: '/gift-videos/steampunk.mp4', title: 'SteamPunk' },
                 { src: '/gift-videos/making-steampunk.mp4', title: 'Making of SteamPumk' },
+                { src: '/gift-videos/gift-showcase-4.mp4', title: 'Personalized Gift Showcase 4' },
+                { src: '/gift-videos/gift-showcase-5.mp4', title: 'Personalized Gift Showcase 5' },
               ]}
             />
           </Container>
